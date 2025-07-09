@@ -1,0 +1,235 @@
+{
+  "files": [
+    {
+      "path": "frontend/src/App.tsx",
+      "content": "import React from 'react';\nimport { BrowserRouter as Router, Route, Switch } from 'react-router-dom';\nimport HomePage from './pages/HomePage';\nimport AboutPage from './pages/AboutPage';\nimport ExhibitsPage from './pages/ExhibitsPage';\nimport EventsPage from './pages/EventsPage';\nimport VisitorInfoPage from './pages/VisitorInfoPage';\nimport MembershipPage from './pages/MembershipPage';\nimport ContactPage from './pages/ContactPage';\nimport Navbar from './components/Navbar';\nimport Footer from './components/Footer';\n\nconst App: React.FC = () => {\n  return (\n    <Router>\n      <Navbar />\n      <Switch>\n        <Route path=\"/\" exact component={HomePage} />\n        <Route path=\"/about\" component={AboutPage} />\n        <Route path=\"/exhibits\" component={ExhibitsPage} />\n        <Route path=\"/events\" component={EventsPage} />\n        <Route path=\"/visitor-info\" component={VisitorInfoPage} />\n        <Route path=\"/membership\" component={MembershipPage} />\n        <Route path=\"/contact\" component={ContactPage} />\n      </Switch>\n      <Footer />\n    </Router>\n  );\n};\n\nexport default App;\n"
+    },
+    {
+      "path": "frontend/src/pages/HomePage.tsx",
+      "content": "import React from 'react';\nimport HeroSection from '../components/HeroSection';\nimport FeaturedExhibits from '../components/FeaturedExhibits';\nimport UpcomingEvents from '../components/UpcomingEvents';\nimport VisitorTips from '../components/VisitorTips';\n\nconst HomePage: React.FC = () => {\n  return (\n    <div>\n      <HeroSection />\n      <FeaturedExhibits />\n      <UpcomingEvents />\n      <VisitorTips />\n    </div>\n  );\n};\n\nexport default HomePage;\n"
+    },
+    {
+      "path": "frontend/src/pages/AboutPage.tsx",
+      "content": "import React from 'react';\n\nconst AboutPage: React.FC = () => {\n  return (\n    <div className=\"container mx-auto p-4\">\n      <h1 className=\"text-3xl font-bold mb-4\">About Kangaroo Zoo</h1>\n      <p>Kangaroo Zoo is dedicated to providing a fun, educational, and memorable experience for families and animal enthusiasts. Our mission is to inspire a love for wildlife and a commitment to conservation through engaging exhibits and interactive programs.</p>\n      <p>Founded in 2023, Kangaroo Zoo has quickly become a beloved destination for families and school groups. Our team is passionate about animal welfare and environmental education, and we strive to create an inclusive and welcoming environment for all visitors.</p>\n    </div>\n  );\n};\n\nexport default AboutPage;\n"
+    },
+    {
+      "path": "frontend/src/pages/ExhibitsPage.tsx",
+      "content": "import React from 'react';\nimport ExhibitList from '../components/ExhibitList';\n\nconst ExhibitsPage: React.FC = () => {\n  return (\n    <div className=\"container mx-auto p-4\">\n      <h1 className=\"text-3xl font-bold mb-4\">Our Exhibits</h1>\n      <ExhibitList />\n    </div>\n  );\n};\n\nexport default ExhibitsPage;\n"
+    },
+    {
+      "path": "frontend/src/pages/EventsPage.tsx",
+      "content": "import React from 'react';\nimport EventCalendar from '../components/EventCalendar';\n\nconst EventsPage: React.FC = () => {\n  return (\n    <div className=\"container mx-auto p-4\">\n      <h1 className=\"text-3xl font-bold mb-4\">Events & Programs</h1>\n      <EventCalendar />\n    </div>\n  );\n};\n\nexport default EventsPage;\n"
+    },
+    {
+      "path": "frontend/src/pages/VisitorInfoPage.tsx",
+      "content": "import React from 'react';\n\nconst VisitorInfoPage: React.FC = () => {\n  return (\n    <div className=\"container mx-auto p-4\">\n      <h1 className=\"text-3xl font-bold mb-4\">Visitor Information</h1>\n      <p>Plan your visit to Kangaroo Zoo with our helpful tips and guidelines. We are open daily from 9 AM to 5 PM. Tickets can be purchased online or at the gate. For group bookings, please contact our customer service team.</p>\n      <p>Address: 123 Zoo Lane, Animal City, AC 12345</p>\n      <p>Phone: (123) 456-7890</p>\n      <p>Email: info@kangaroozoo.com</p>\n    </div>\n  );\n};\n\nexport default VisitorInfoPage;\n"
+    },
+    {
+      "path": "frontend/src/pages/MembershipPage.tsx",
+      "content": "import React from 'react';\n\nconst MembershipPage: React.FC = () => {\n  return (\n    <div className=\"container mx-auto p-4\">\n      <h1 className=\"text-3xl font-bold mb-4\">Membership</h1>\n      <p>Become a member of Kangaroo Zoo and enjoy exclusive benefits, including unlimited visits, discounts on events and programs, and special member-only experiences. Choose from our flexible membership plans to suit your needs.</p>\n      <ul>\n        <li>Individual Membership: $50/year</li>\n        <li>Family Membership: $120/year</li>\n        <li>Premium Membership: $200/year</li>\n      </ul>\n      <button className=\"bg-blue-500 text-white px-4 py-2 rounded mt-4\">Sign Up Now</button>\n    </div>\n  );\n};\n\nexport default MembershipPage;\n"
+    },
+    {
+      "path": "frontend/src/pages/ContactPage.tsx",
+      "content": "import React from 'react';\n\nconst ContactPage: React.FC = () => {\n  return (\n    <div className=\"container mx-auto p-4\">\n      <h1 className=\"text-3xl font-bold mb-4\">Contact Us</h1>\n      <p>If you have any questions or need assistance, please reach out to our customer service team. We are here to help!</p>\n      <form className=\"mt-4\">\n        <div className=\"mb-4\">\n          <label className=\"block text-gray-700\">Name</label>\n          <input type=\"text\" className=\"w-full px-3 py-2 border rounded\" />\n        </div>\n        <div className=\"mb-4\">\n          <label className=\"block text-gray-700\">Email</label>\n          <input type=\"email\" className=\"w-full px-3 py-2 border rounded\" />\n        </div>\n        <div className=\"mb-4\">\n          <label className=\"block text-gray-700\">Message</label>\n          <textarea className=\"w-full px-3 py-2 border rounded\"></textarea>\n        </div>\n        <button type=\"submit\" className=\"bg-blue-500 text-white px-4 py-2 rounded\">Send Message</button>\n      </form>\n    </div>\n  );\n};\n\nexport default ContactPage;\n"
+    },
+    {
+      "path": "frontend/src/components/Navbar.tsx",
+      "content": "import React from 'react';\nimport { Link } from 'react-router-dom';\n\nconst Navbar: React.FC = () => {\n  return (\n    <nav className=\"bg-gray-800 p-4\">\n      <div className=\"container mx-auto flex justify-between\">\n        <Link to=\"/\" className=\"text-white text-lg font-bold\">Kangaroo Zoo</Link>\n        <div className=\"flex space-x-4\">\n          <Link to=\"/about\" className=\"text-white\">About Us</Link>\n          <Link to=\"/exhibits\" className=\"text-white\">Exhibits</Link>\n          <Link to=\"/events\" className=\"text-white\">Events</Link>\n          <Link to=\"/visitor-info\" className=\"text-white\">Visitor Info</Link>\n          <Link to=\"/membership\" className=\"text-white\">Membership</Link>\n          <Link to=\"/contact\" className=\"text-white\">Contact</Link>\n        </div>\n      </div>\n    </nav>\n  );\n};\n\nexport default Navbar;\n"
+    },
+    {
+      "path": "frontend/src/components/Footer.tsx",
+      "content": "import React from 'react';\n\nconst Footer: React.FC = () => {\n  return (\n    <footer className=\"bg-gray-800 p-4 mt-8\">\n      <div className=\"container mx-auto text-center text-white\">\n        <p>&copy; 2023 Kangaroo Zoo. All rights reserved.</p>\n        <p>Follow us on social media for the latest updates and events.</p>\n      </div>\n    </footer>\n  );\n};\n\nexport default Footer;\n"
+    },
+    {
+      "path": "frontend/src/components/HeroSection.tsx",
+      "content": "import React from 'react';\n\nconst HeroSection: React.FC = () => {\n  return (\n    <div className=\"bg-cover bg-center h-96\" style={{ backgroundImage: 'url(/images/hero.jpg)' }}>\n      <div className=\"bg-black bg-opacity-50 h-full flex items-center justify-center\">\n        <h1 className=\"text-white text-4xl font-bold\">Welcome to Kangaroo Zoo</h1>\n      </div>\n    </div>\n  );\n};\n\nexport default HeroSection;\n"
+    },
+    {
+      "path": "frontend/src/components/FeaturedExhibits.tsx",
+      "content": "import React from 'react';\n\nconst FeaturedExhibits: React.FC = () => {\n  return (\n    <div className=\"container mx-auto p-4\">\n      <h2 className=\"text-2xl font-bold mb-4\">Featured Exhibits</h2>\n      <div className=\"grid grid-cols-1 md:grid-cols-3 gap-4\">\n        <div className=\"bg-white p-4 rounded shadow\">\n          <img src=\"/images/exhibit1.jpg\" alt=\"Exhibit 1\" className=\"w-full h-48 object-cover rounded\" />\n          <h3 className=\"text-xl font-bold mt-2\">Kangaroo Kingdom</h3>\n          <p>Explore the world of kangaroos and learn about their unique behaviors and habitats.</p>\n        </div>\n        <div className=\"bg-white p-4 rounded shadow\">\n          <img src=\"/images/exhibit2.jpg\" alt=\"Exhibit 2\" className=\"w-full h-48 object-cover rounded\" />\n          <h3 className=\"text-xl font-bold mt-2\">Reptile House</h3>\n          <p>Discover a variety of reptiles from around the world, including snakes, lizards, and turtles.</p>\n        </div>\n        <div className=\"bg-white p-4 rounded shadow\">\n          <img src=\"/images/exhibit3.jpg\" alt=\"Exhibit 3\" className=\"w-full h-48 object-cover rounded\" />\n          <h3 className=\"text-xl font-bold mt-2\">Bird Paradise</h3>\n          <p>Experience the beauty of exotic birds in our immersive aviary exhibit.</p>\n        </div>\n      </div>\n    </div>\n  );\n};\n\nexport default FeaturedExhibits;\n"
+    },
+    {
+      "path": "frontend/src/components/UpcomingEvents.tsx",
+      "content": "import React from 'react';\n\nconst UpcomingEvents: React.FC = () => {\n  return (\n    <div className=\"container mx-auto p-4\">\n      <h2 className=\"text-2xl font-bold mb-4\">Upcoming Events</h2>\n      <ul className=\"list-disc pl-5\">\n        <li>Wildlife Photography Workshop - July 15, 2023</li>\n        <li>Zoo Camp for Kids - August 1-5, 2023</li>\n        <li>Conservation Awareness Day - September 10, 2023</li>\n      </ul>\n    </div>\n  );\n};\n\nexport default UpcomingEvents;\n"
+    },
+    {
+      "path": "frontend/src/components/VisitorTips.tsx",
+      "content": "import React from 'react';\n\nconst VisitorTips: React.FC = () => {\n  return (\n    <div className=\"container mx-auto p-4\">\n      <h2 className=\"text-2xl font-bold mb-4\">Visitor Tips</h2>\n      <ul className=\"list-disc pl-5\">\n        <li>Wear comfortable shoes for walking.</li>\n        <li>Bring sunscreen and a hat for sun protection.</li>\n        <li>Check the weather forecast and plan accordingly.</li>\n        <li>Download our mobile app for an interactive map and more.</li>\n      </ul>\n    </div>\n  );\n};\n\nexport default VisitorTips;\n"
+    },
+    {
+      "path": "frontend/src/components/ExhibitList.tsx",
+      "content": "import React from 'react';\n\nconst ExhibitList: React.FC = () => {\n  return (\n    <div className=\"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4\">\n      <div className=\"bg-white p-4 rounded shadow\">\n        <img src=\"/images/exhibit1.jpg\" alt=\"Exhibit 1\" className=\"w-full h-48 object-cover rounded\" />\n        <h3 className=\"text-xl font-bold mt-2\">Kangaroo Kingdom</h3>\n        <p>Explore the world of kangaroos and learn about their unique behaviors and habitats.</p>\n      </div>\n      <div className=\"bg-white p-4 rounded shadow\">\n        <img src=\"/images/exhibit2.jpg\" alt=\"Exhibit 2\" className=\"w-full h-48 object-cover rounded\" />\n        <h3 className=\"text-xl font-bold mt-2\">Reptile House</h3>\n        <p>Discover a variety of reptiles from around the world, including snakes, lizards, and turtles.</p>\n      </div>\n      <div className=\"bg-white p-4 rounded shadow\">\n        <img src=\"/images/exhibit3.jpg\" alt=\"Exhibit 3\" className=\"w-full h-48 object-cover rounded\" />\n        <h3 className=\"text-xl font-bold mt-2\">Bird Paradise</h3>\n        <p>Experience the beauty of exotic birds in our immersive aviary exhibit.</p>\n      </div>\n    </div>\n  );\n};\n\nexport default ExhibitList;\n"
+    },
+    {
+      "path": "frontend/src/components/EventCalendar.tsx",
+      "content": "import React from 'react';\n\nconst EventCalendar: React.FC = () => {\n  return (\n    <div className=\"bg-white p-4 rounded shadow\">\n      <h3 className=\"text-xl font-bold mb-2\">Event Calendar</h3>\n      <p>Check out our upcoming events and programs. Click on an event to learn more and register.</p>\n      <ul className=\"list-disc pl-5\">\n        <li>Wildlife Photography Workshop - July 15, 2023</li>\n        <li>Zoo Camp for Kids - August 1-5, 2023</li>\n        <li>Conservation Awareness Day - September 10, 2023</li>\n      </ul>\n    </div>\n  );\n};\n\nexport default EventCalendar;\n"
+    },
+    {
+      "path": "frontend/src/hooks/useFetch.ts",
+      "content": "import { useState, useEffect } from 'react';\nimport axios from 'axios';\n\nconst useFetch = (url: string) => {\n  const [data, setData] = useState<any>(null);\n  const [loading, setLoading] = useState<boolean>(true);\n  const [error, setError] = useState<string | null>(null);\n\n  useEffect(() => {\n    const fetchData = async () => {\n      try {\n        const response = await axios.get(url);\n        setData(response.data);\n      } catch (err) {\n        setError(err.message);\n      } finally {\n        setLoading(false);\n      }\n    };\n    fetchData();\n  }, [url]);\n\n  return { data, loading, error };\n};\n\nexport default useFetch;\n"
+    },
+    {
+      "path": "frontend/src/utils/formatDate.ts",
+      "content": "export const formatDate = (dateString: string): string => {\n  const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' };\n  return new Date(dateString).toLocaleDateString(undefined, options);\n};\n"
+    },
+    {
+      "path": "frontend/src/types/index.ts",
+      "content": "export interface Exhibit {\n  id: number;\n  name: string;\n  description: string;\n  image: string;\n}\n\nexport interface Event {\n  id: number;\n  name: string;\n  date: string;\n  description: string;\n}\n\nexport interface Membership {\n  id: number;\n  type: string;\n  price: number;\n  benefits: string[];\n}\n"
+    },
+    {
+      "path": "backend/src/index.ts",
+      "content": "import express from 'express';\nimport cors from 'cors';\nimport helmet from 'helmet';\nimport morgan from 'morgan';\nimport { json, urlencoded } from 'body-parser';\nimport exhibitsRouter from './routes/exhibits';\nimport eventsRouter from './routes/events';\nimport visitorInfoRouter from './routes/visitorInfo';\nimport membershipRouter from './routes/membership';\n\nconst app = express();\n\napp.use(cors());\napp.use(helmet());\napp.use(morgan('dev'));\napp.use(json());\napp.use(urlencoded({ extended: true }));\n\napp.use('/api/exhibits', exhibitsRouter);\napp.use('/api/events', eventsRouter);\napp.use('/api/visitor-info', visitorInfoRouter);\napp.use('/api/membership', membershipRouter);\n\nconst PORT = process.env.PORT || 5000;\napp.listen(PORT, () => {\n  console.log(`Server is running on port ${PORT}`);\n});\n"
+    },
+    {
+      "path": "backend/src/routes/exhibits.ts",
+      "content": "import { Router } from 'express';\nimport { getExhibits } from '../controllers/exhibitsController';\n\nconst router = Router();\n\nrouter.get('/', getExhibits);\n\nexport default router;\n"
+    },
+    {
+      "path": "backend/src/routes/events.ts",
+      "content": "import { Router } from 'express';\nimport { getEvents } from '../controllers/eventsController';\n\nconst router = Router();\n\nrouter.get('/', getEvents);\n\nexport default router;\n"
+    },
+    {
+      "path": "backend/src/routes/visitorInfo.ts",
+      "content": "import { Router } from 'express';\nimport { getVisitorInfo } from '../controllers/visitorInfoController';\n\nconst router = Router();\n\nrouter.get('/', getVisitorInfo);\n\nexport default router;\n"
+    },
+    {
+      "path": "backend/src/routes/membership.ts",
+      "content": "import { Router } from 'express';\nimport { getMemberships } from '../controllers/membershipController';\n\nconst router = Router();\n\nrouter.get('/', getMemberships);\n\nexport default router;\n"
+    },
+    {
+      "path": "backend/src/controllers/exhibitsController.ts",
+      "content": "import { Request, Response } from 'express';\nimport { Exhibit } from '../models/Exhibit';\n\nexport const getExhibits = async (req: Request, res: Response) => {\n  try {\n    const exhibits = await Exhibit.findAll();\n    res.json(exhibits);\n  } catch (error) {\n    res.status(500).json({ error: 'Failed to fetch exhibits' });\n  }\n};\n"
+    },
+    {
+      "path": "backend/src/controllers/eventsController.ts",
+      "content": "import { Request, Response } from 'express';\nimport { Event } from '../models/Event';\n\nexport const getEvents = async (req: Request, res: Response) => {\n  try {\n    const events = await Event.findAll();\n    res.json(events);\n  } catch (error) {\n    res.status(500).json({ error: 'Failed to fetch events' });\n  }\n};\n"
+    },
+    {
+      "path": "backend/src/controllers/visitorInfoController.ts",
+      "content": "import { Request, Response } from 'express';\n\nexport const getVisitorInfo = (req: Request, res: Response) => {\n  res.json({\n    hours: '9 AM - 5 PM',\n    address: '123 Zoo Lane, Animal City, AC 12345',\n    phone: '(123) 456-7890',\n    email: 'info@kangaroozoo.com'\n  });\n};\n"
+    },
+    {
+      "path": "backend/src/controllers/membershipController.ts",
+      "content": "import { Request, Response } from 'express';\nimport { Membership } from '../models/Membership';\n\nexport const getMemberships = async (req: Request, res: Response) => {\n  try {\n    const memberships = await Membership.findAll();\n    res.json(memberships);\n  } catch (error) {\n    res.status(500).json({ error: 'Failed to fetch memberships' });\n  }\n};\n"
+    },
+    {
+      "path": "backend/src/models/Exhibit.ts",
+      "content": "import { DataTypes, Model } from 'sequelize';\nimport sequelize from '../config/database';\n\nclass Exhibit extends Model {}\n\nExhibit.init({\n  id: {\n    type: DataTypes.INTEGER,\n    autoIncrement: true,\n    primaryKey: true\n  },\n  name: {\n    type: DataTypes.STRING,\n    allowNull: false\n  },\n  description: {\n    type: DataTypes.TEXT,\n    allowNull: false\n  },\n  image: {\n    type: DataTypes.STRING,\n    allowNull: false\n  }\n}, {\n  sequelize,\n  modelName: 'Exhibit'\n});\n\nexport { Exhibit };\n"
+    },
+    {
+      "path": "backend/src/models/Event.ts",
+      "content": "import { DataTypes, Model } from 'sequelize';\nimport sequelize from '../config/database';\n\nclass Event extends Model {}\n\nEvent.init({\n  id: {\n    type: DataTypes.INTEGER,\n    autoIncrement: true,\n    primaryKey: true\n  },\n  name: {\n    type: DataTypes.STRING,\n    allowNull: false\n  },\n  date: {\n    type: DataTypes.DATE,\n    allowNull: false\n  },\n  description: {\n    type: DataTypes.TEXT,\n    allowNull: false\n  }\n}, {\n  sequelize,\n  modelName: 'Event'\n});\n\nexport { Event };\n"
+    },
+    {
+      "path": "backend/src/models/Membership.ts",
+      "content": "import { DataTypes, Model } from 'sequelize';\nimport sequelize from '../config/database';\n\nclass Membership extends Model {}\n\nMembership.init({\n  id: {\n    type: DataTypes.INTEGER,\n    autoIncrement: true,\n    primaryKey: true\n  },\n  type: {\n    type: DataTypes.STRING,\n    allowNull: false\n  },\n  price: {\n    type: DataTypes.FLOAT,\n    allowNull: false\n  },\n  benefits: {\n    type: DataTypes.ARRAY(DataTypes.STRING),\n    allowNull: false\n  }\n}, {\n  sequelize,\n  modelName: 'Membership'\n});\n\nexport { Membership };\n"
+    },
+    {
+      "path": "backend/src/config/database.ts",
+      "content": "import { Sequelize } from 'sequelize';\n\nconst sequelize = new Sequelize(process.env.DATABASE_URL || '', {\n  dialect: 'postgres',\n  protocol: 'postgres',\n  logging: false,\n  dialectOptions: {\n    ssl: {\n      require: true,\n      rejectUnauthorized: false\n    }\n  }\n});\n\nexport default sequelize;\n"
+    },
+    {
+      "path": "backend/src/middleware/auth.ts",
+      "content": "import { Request, Response, NextFunction } from 'express';\nimport jwt from 'jsonwebtoken';\n\nexport const authenticateJWT = (req: Request, res: Response, next: NextFunction) => {\n  const token = req.header('Authorization')?.split(' ')[1];\n\n  if (!token) {\n    return res.sendStatus(403);\n  }\n\n  jwt.verify(token, process.env.JWT_SECRET || '', (err, user) => {\n    if (err) {\n      return res.sendStatus(403);\n    }\n    req.user = user;\n    next();\n  });\n};\n"
+    },
+    {
+      "path": "backend/src/services/emailService.ts",
+      "content": "import nodemailer from 'nodemailer';\n\nconst transporter = nodemailer.createTransport({\n  service: 'Gmail',\n  auth: {\n    user: process.env.EMAIL_USER,\n    pass: process.env.EMAIL_PASS\n  }\n});\n\nexport const sendEmail = async (to: string, subject: string, text: string) => {\n  const mailOptions = {\n    from: process.env.EMAIL_USER,\n    to,\n    subject,\n    text\n  };\n\n  try {\n    await transporter.sendMail(mailOptions);\n  } catch (error) {\n    console.error('Error sending email:', error);\n  }\n};\n"
+    },
+    {
+      "path": "backend/src/services/analyticsService.ts",
+      "content": "import { Request, Response, NextFunction } from 'express';\n\nexport const logAnalytics = (req: Request, res: Response, next: NextFunction) => {\n  console.log(`Request to ${req.path} at ${new Date().toISOString()}`);\n  next();\n};\n"
+    },
+    {
+      "path": "backend/src/utils/logger.ts",
+      "content": "import winston from 'winston';\n\nconst logger = winston.createLogger({\n  level: 'info',\n  format: winston.format.json(),\n  transports: [\n    new winston.transports.Console({\n      format: winston.format.simple()\n    })\n  ]\n});\n\nexport default logger;\n"
+    },
+    {
+      "path": "backend/src/utils/errorHandler.ts",
+      "content": "import { Request, Response, NextFunction } from 'express';\n\nexport const errorHandler = (err: Error, req: Request, res: Response, next: NextFunction) => {\n  console.error(err.stack);\n  res.status(500).send('Something broke!');\n};\n"
+    },
+    {
+      "path": "backend/src/types/index.ts",
+      "content": "export interface User {\n  id: number;\n  username: string;\n  email: string;\n  password: string;\n}\n\nexport interface Exhibit {\n  id: number;\n  name: string;\n  description: string;\n  image: string;\n}\n\nexport interface Event {\n  id: number;\n  name: string;\n  date: string;\n  description: string;\n}\n\nexport interface Membership {\n  id: number;\n  type: string;\n  price: number;\n  benefits: string[];\n}\n"
+    },
+    {
+      "path": "backend/src/config/config.ts",
+      "content": "export default {\n  jwtSecret: process.env.JWT_SECRET || 'your_jwt_secret',\n  emailUser: process.env.EMAIL_USER || 'your_email@gmail.com',\n  emailPass: process.env.EMAIL_PASS || 'your_email_password'\n};\n"
+    },
+    {
+      "path": "backend/src/middleware/rateLimiter.ts",
+      "content": "import rateLimit from 'express-rate-limit';\n\nexport const apiLimiter = rateLimit({\n  windowMs: 15 * 60 * 1000, // 15 minutes\n  max: 100, // limit each IP to 100 requests per windowMs\n  message: 'Too many requests from this IP, please try again later.'\n});\n"
+    },
+    {
+      "path": "public/smartsite-link-id.json",
+      "content": "{\n  \"id\": \"fe147004-d431-49db-8326-5cf1c4864d98\",\n  \"created_at\": \"2025-07-09T10:41:18.425Z\",\n  \"version\": \"1.0\",\n  \"permanent\": true\n}\n"
+    },
+    {
+      "path": "smartsite.config.json",
+      "content": "{\n  \"smartsite_id\": \"fe147004-d431-49db-8326-5cf1c4864d98\",\n  \"created_at\": \"2025-07-09T10:41:18.425Z\",\n  \"registered\": false,\n  \"app_name\": \"Kangaroo Zoo\",\n  \"app_type\": \"enhanced_chatgpt_claude_generation\",\n  \"admin_panel_enabled\": true,\n  \"overlay_protocol_enabled\": true,\n  \"permanent_linkage\": true\n}\n"
+    }
+  ],
+  "dependencies": {
+    "frontend": {
+      "react": "^18.2.0",
+      "react-dom": "^18.2.0",
+      "react-router-dom": "^6.3.0",
+      "axios": "^0.27.2",
+      "react-query": "^3.39.2",
+      "tailwindcss": "^3.0.23",
+      "typescript": "^4.6.4",
+      "vite": "^3.0.0",
+      "shadcn/ui": "^1.0.0"
+    },
+    "backend": {
+      "express": "^4.18.1",
+      "cors": "^2.8.5",
+      "helmet": "^5.0.2",
+      "morgan": "^1.10.0",
+      "sequelize": "^6.21.1",
+      "pg": "^8.7.3",
+      "pg-hstore": "^2.3.4",
+      "jsonwebtoken": "^8.5.1",
+      "nodemailer": "^6.7.2",
+      "winston": "^3.5.1",
+      "express-rate-limit": "^6.0.5",
+      "dotenv": "^16.0.0"
+    }
+  },
+  "scripts": {
+    "frontend": {
+      "start": "vite",
+      "build": "vite build",
+      "serve": "vite preview"
+    },
+    "backend": {
+      "start": "ts-node-dev src/index.ts",
+      "build": "tsc",
+      "serve": "node dist/index.js"
+    },
+    "common": {
+      "dev": "concurrently \"npm run start --prefix frontend\" \"npm run start --prefix backend\"",
+      "build": "npm run build --prefix frontend && npm run build --prefix backend"
+    }
+  },
+  "environment": {
+    "frontend": {
+      "VITE_API_URL": "http://localhost:5000/api"
+    },
+    "backend": {
+      "DATABASE_URL": "postgres://user:password@localhost:5432/kangaroozoo",
+      "JWT_SECRET": "your_jwt_secret",
+      "EMAIL_USER": "your_email@gmail.com",
+      "EMAIL_PASS": "your_email_password",
+      "PORT": "5000"
+    }
+  },
+  "setupInstructions": [
+    "1. Clone the repository.",
+    "2. Navigate to the frontend directory and run `npm install`.",
+    "3. Navigate to the backend directory and run `npm install`.",
+    "4. Set up a PostgreSQL database and update the DATABASE_URL in the backend environment.",
+    "5. Run `npm run dev` from the root directory to start both frontend and backend servers.",
+    "6. Access the application at http://localhost:3000."
+  ]
+}
